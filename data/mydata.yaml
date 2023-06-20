@@ -1,0 +1,6 @@
+train: C:\Users\Macro Xie\Desktop\yolov5\data\mydata\images\train
+val: C:\Users\Macro Xie\Desktop\yolov5\data\mydata\images\val
+
+# Classes
+nc: 4  # number of classes
+names: ['ct_body', 'ct_head', 't_body', 't_head']  # class names

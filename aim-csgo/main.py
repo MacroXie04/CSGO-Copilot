@@ -14,29 +14,29 @@ import argparse
 
 ##此区域为调试模块 执行前需按照标砖设置参数
 parser = argparse.ArgumentParser()
-parser.add_argument('--model-path', type=str, default='./models/aim-csgo2.pt', help='模型地址')
-parser.add_argument('--imgsz', type=int, default=640, help='和你训练模型时imgsz一样')
-parser.add_argument('--conf-thres', type=float, default=0.4, help='置信阈值')
-parser.add_argument('--iou-thres', type=float, default=0.05, help='交并比阈值')
-parser.add_argument('--use-cuda', type=bool, default=True, help='是否使用cuda加快运算速度和准确性')
-parser.add_argument('--color', type=tuple, default=(0, 255, 0), help='扫描方框颜色')
-parser.add_argument('--thickness', type=int, default=3, help='扫描方框粗细值')
-parser.add_argument('--show-window', type=bool, default=True, help='是否显示实时检测窗口(新版里改进了效率。若为True，不要去点右上角的X！)')
+parser.add_argument('--model-path', type=str, default='./models/aim-csgo2.pt')
+parser.add_argument('--imgsz', type=int, default=640)
+parser.add_argument('--conf-thres', type=float, default=0.4)
+parser.add_argument('--iou-thres', type=float, default=0.05)
+parser.add_argument('--use-cuda', type=bool, default=True)
+parser.add_argument('--color', type=tuple, default=(0, 255, 0))
+parser.add_argument('--thickness', type=int, default=3)
+parser.add_argument('--show-window', type=bool, default=True)
 
 
-parser.add_argument('--fullscreen-detect', type=bool, default=True, help='是否全屏')
-parser.add_argument('--resolution', type=tuple, default=(1920, 1080), help='全屏分辨率分辨率')
+parser.add_argument('--fullscreen-detect', type=bool, default=True)
+parser.add_argument('--resolution', type=tuple, default=(1920, 1080))
 
-parser.add_argument('--region', type=tuple, default=(0, 0, 1920, 1080), help='检测范围；若fullscreen-detect参数为False，则需自定义此参数。反之则不需要')
+parser.add_argument('--region', type=tuple, default=(0, 0, 1920, 1080))
 
-parser.add_argument('--hold-lock', type=bool, default=False, help='lock模式；True为按住，False为切换。')
-parser.add_argument('--lock-button', type=str, default='x2', help='lock按键')
-parser.add_argument('--head-first', type=bool, default=True, help='是否优先瞄准头部')
-parser.add_argument('--lock-tag', type=list, default=[0, 1, 2, 3], help='对应标签；自己按以下顺序对应标签，ct_head ct_body t_head t_body')
-parser.add_argument('--lock-choice', type=list, default=[0, 1, 2, 3], help='目标选择；可自行决定锁定的目标，从自己的标签中选')
+parser.add_argument('--hold-lock', type=bool, default=False)
+parser.add_argument('--lock-button', type=str, default='shift')
+parser.add_argument('--head-first', type=bool, default=True)
+parser.add_argument('--lock-tag', type=list, default=[0, 1, 2, 3])
+parser.add_argument('--lock-choice', type=list, default=[0, 1, 2, 3])
 
-parser.add_argument('--recoil-button', type=str, default='x1', help='压枪按键(懒得写切换和按住两种模式了，就一个切换模式就完了，应该没有人想要按住压枪)')
-parser.add_argument('--recoil-sen', type=float, default=-2, help='压枪幅度系数；自己调，调到合适')
+parser.add_argument('--recoil-button', type=str, default='x1')
+parser.add_argument('--recoil-sen', type=float, default=-2)
 
 args = parser.parse_args()
 
